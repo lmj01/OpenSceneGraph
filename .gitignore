@@ -1,0 +1,9 @@
+
+# vim tempare file
+*~
+
+OpenSceneGraphData/
+bin/
+build/
+*.swp
+
