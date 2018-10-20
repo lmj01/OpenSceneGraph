@@ -11,14 +11,15 @@ find_package(osgGA REQUIRED)
 find_package(osgDB REQUIRED)
 
 include_directories(${OSG_INCLUDE_DIR})
-link_directories(${OSG_LIB_DIR})
+include_directories(${OSG_ROOT}/include)
+
+link_directories(${OSG_ROOT}/lib)
+link_directories(${OSG_ROOT}/debug/lib)
 
 ADD_EXECUTABLE(demo ${SRC_FILES})
 
-target_link_libraries(demo PRIVATE
-	debug osg${OSG_DEBUG_POSTFIX}			optimized osg
-	debug OpenThreads${OSG_DEBUG_POSTFIX}		optimized OpenThreads
-	debug osgViewer${OSG_DEBUG_POSTFIX} 		optimized osgViewer
-	debug osgGA${OSG_DEBUG_POSTFIX} 		optimized osgGA
-	debug osgDB${OSG_DEBUG_POSTFIX}			optimized osgDB
-)
+LMJ_LINK(demo OpenThreads)
+LMJ_LINK(demo osg)
+LMJ_LINK(demo osgViewer)
+LMJ_LINK(demo osgGA)
+LMJ_LINK(demo osgDB)

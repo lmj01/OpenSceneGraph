@@ -1,1 +1,1 @@
-MSBuild.exe lmjOpenSceneGraph.sln /t:Rebuild /p:Configuration=release
+MSBuild.exe lmjOpenSceneGraph.sln /t:build /p:Configuration=release

@@ -1,9 +1,11 @@
 
 # vim tempare file
 *~
+*.swp
 
 OpenSceneGraphData/
 bin/
+Dbin/
 build/
-*.swp
+
 
