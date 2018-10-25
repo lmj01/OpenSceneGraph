@@ -5,6 +5,7 @@ project(lmjOpenSceneGraph)
 
 set(ADDRESS_MODEL 64)
 set(NODE_TARGET x64)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(OSG_DIR "h:/vcpkg/installed/x64-windows")
 set(OSG_ROOT "h:/vcpkg/installed/x64-windows")
@@ -24,3 +25,4 @@ ENDMACRO()
 add_subdirectory(demo)
 add_subdirectory(shader)
 add_subdirectory(oglpg8)
+add_subdirectory(3dcurve)

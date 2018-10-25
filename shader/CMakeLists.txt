@@ -16,6 +16,18 @@ set(SRC_tessellation
 set(SRC_volume
 	volume.cpp
 )
+set(SRC_blocky
+	blocky.cpp
+)
+set(SRC_fourColor
+	fourColor.cpp
+)
+set(SRC_bezier
+	bezier.cpp
+)
+set(SRC_geometry1
+	geometry1.cpp
+)
 
 find_package(OpenThreads REQUIRED)
 find_package(osg REQUIRED)
@@ -68,3 +80,24 @@ LMJ_LINK(shader_volume osgVolume)
 LMJ_LINK(shader_volume osgManipulator)
 target_link_libraries(shader_volume PUBLIC opengl32)
 
+ADD_EXECUTABLE(shader_blocky ${SRC_blocky})
+LMJ_LINK(shader_blocky OpenThreads)
+LMJ_LINK(shader_blocky osg)
+LMJ_LINK(shader_blocky osgViewer)
+
+ADD_EXECUTABLE(shader_fourColor ${SRC_fourColor})
+LMJ_LINK(shader_fourColor OpenThreads)
+LMJ_LINK(shader_fourColor osg)
+LMJ_LINK(shader_fourColor osgViewer)
+LMJ_LINK(shader_fourColor osgDB)
+
+ADD_EXECUTABLE(shader_bezier ${SRC_bezier})
+LMJ_LINK(shader_bezier OpenThreads)
+LMJ_LINK(shader_bezier osg)
+LMJ_LINK(shader_bezier osgViewer)
+
+ADD_EXECUTABLE(shader_geometry1 ${SRC_geometry1})
+LMJ_LINK(shader_geometry1 OpenThreads)
+LMJ_LINK(shader_geometry1 osg)
+LMJ_LINK(shader_geometry1 osgViewer)
+LMJ_LINK(shader_geometry1 osgDB)
